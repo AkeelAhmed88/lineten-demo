@@ -4,14 +4,14 @@
     "C:\\Users\\akeel\\source\\repos\\lineten-demo\\LineTen\\LineTen.csproj": {}
   },
   "projects": {
-    "C:\\Users\\akeel\\source\\repos\\lineten-demo\\LineTen\\LineTen.csproj": {
+    "C:\\Users\\akeel\\source\\repos\\lineten-demo\\LineTen.Infrastructure\\LineTen.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\akeel\\source\\repos\\lineten-demo\\LineTen\\LineTen.csproj",
-        "projectName": "LineTen",
-        "projectPath": "C:\\Users\\akeel\\source\\repos\\lineten-demo\\LineTen\\LineTen.csproj",
+        "projectUniqueName": "C:\\Users\\akeel\\source\\repos\\lineten-demo\\LineTen.Infrastructure\\LineTen.Infrastructure.csproj",
+        "projectName": "LineTen.Infrastructure",
+        "projectPath": "C:\\Users\\akeel\\source\\repos\\lineten-demo\\LineTen.Infrastructure\\LineTen.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\akeel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\akeel\\source\\repos\\lineten-demo\\LineTen\\obj\\",
+        "outputPath": "C:\\Users\\akeel\\source\\repos\\lineten-demo\\LineTen.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -43,7 +43,83 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\akeel\\source\\repos\\lineten-demo\\LineTen\\LineTen.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\akeel\\source\\repos\\lineten-demo\\LineTen\\LineTen.csproj",
+        "projectName": "LineTen",
+        "projectPath": "C:\\Users\\akeel\\source\\repos\\lineten-demo\\LineTen\\LineTen.csproj",
+        "packagesPath": "C:\\Users\\akeel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\akeel\\source\\repos\\lineten-demo\\LineTen\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\akeel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\akeel\\source\\repos\\lineten-demo\\LineTen.Infrastructure\\LineTen.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\akeel\\source\\repos\\lineten-demo\\LineTen.Infrastructure\\LineTen.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
             "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.11, )"
             },

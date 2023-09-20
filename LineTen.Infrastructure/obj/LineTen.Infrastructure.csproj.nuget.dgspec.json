@@ -11,7 +11,7 @@
         "projectName": "LineTen.Infrastructure",
         "projectPath": "C:\\Users\\akeel\\source\\repos\\lineten-demo\\LineTen.Infrastructure\\LineTen.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\akeel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\akeel\\Source\\Repos\\lineten-demo\\LineTen.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\akeel\\source\\repos\\lineten-demo\\LineTen.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -42,6 +42,16 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
