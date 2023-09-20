@@ -5517,11 +5517,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\akeel\\source\\repos\\LineTen\\LineTen.Test\\LineTen.Test.csproj",
+      "projectUniqueName": "C:\\Users\\akeel\\Source\\Repos\\lineten-demo\\LineTen.Test\\LineTen.Test.csproj",
       "projectName": "LineTen.Test",
-      "projectPath": "C:\\Users\\akeel\\source\\repos\\LineTen\\LineTen.Test\\LineTen.Test.csproj",
+      "projectPath": "C:\\Users\\akeel\\Source\\Repos\\lineten-demo\\LineTen.Test\\LineTen.Test.csproj",
       "packagesPath": "C:\\Users\\akeel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\akeel\\source\\repos\\LineTen\\LineTen.Test\\obj\\",
+      "outputPath": "C:\\Users\\akeel\\Source\\Repos\\lineten-demo\\LineTen.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

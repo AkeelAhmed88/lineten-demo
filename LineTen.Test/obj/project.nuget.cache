@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "99gqvCXb9HDAB7taQNqsuYi+QudJ/UVowUtiMEMXC1Eiwb0M/XD9S+90UIh60aNMlpPnKYIt9loMPlLNMZiznA==",
+  "dgSpecHash": "wOF7LTV8mjQ8OzZ6ENi4zR1Oan0ZIRML4xhNOagI7mI6Q7mbJ0dpqFodzmY+Xy+amAZIpj4W6iu5PRHSh7uWwQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\akeel\\source\\repos\\LineTen\\LineTen.Test\\LineTen.Test.csproj",
+  "projectFilePath": "C:\\Users\\akeel\\source\\repos\\lineten-demo\\LineTen.Test\\LineTen.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\akeel\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\akeel\\.nuget\\packages\\microsoft.codecoverage\\17.7.1\\microsoft.codecoverage.17.7.1.nupkg.sha512",

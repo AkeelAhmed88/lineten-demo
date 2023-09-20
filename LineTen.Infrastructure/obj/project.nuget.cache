@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fXzAqXaDvR7mF7C5DI85/EMw44kg4aEPQ1ERAHTY8LVnsUVxfvMpPwNb6iWnETb5mJsAUn7jba8kyc4XOIGw2Q==",
+  "dgSpecHash": "mlHjZXy4HbwaM01JAh3GqatzfKC5OEHPLl1DOILEiQLveuu3Z6Pk4IleV4AyWW2BV1f5F0x5rgl4BCjy5xxVIw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\akeel\\source\\repos\\LineTen\\LineTen.Infrastructure\\LineTen.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\akeel\\source\\repos\\lineten-demo\\LineTen.Infrastructure\\LineTen.Infrastructure.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

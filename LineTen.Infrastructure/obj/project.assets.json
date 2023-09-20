@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\akeel\\source\\repos\\LineTen\\LineTen.Infrastructure\\LineTen.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\akeel\\Source\\Repos\\lineten-demo\\LineTen.Infrastructure\\LineTen.Infrastructure.csproj",
       "projectName": "LineTen.Infrastructure",
-      "projectPath": "C:\\Users\\akeel\\source\\repos\\LineTen\\LineTen.Infrastructure\\LineTen.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\akeel\\Source\\Repos\\lineten-demo\\LineTen.Infrastructure\\LineTen.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\akeel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\akeel\\source\\repos\\LineTen\\LineTen.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\akeel\\Source\\Repos\\lineten-demo\\LineTen.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
