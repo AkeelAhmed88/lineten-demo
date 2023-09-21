@@ -1,16 +1,16 @@
-﻿using System.Data.Entity;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace LineTen.Infrastructure
 {
     public class LineTenContext : DbContext
     {
-        public LineTenContext() : base("LineTen") 
+        public LineTenContext() : base() 
         {
         }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.AddFromAssembly(typeof(LineTenContext).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(LineTenContext).Assembly);
 
             base.OnModelCreating(modelBuilder);
         }

@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LineTen.Domain\LineTen.Domain.csproj" />
+    <ProjectReference Include="..\LineTen.EntityFramework\LineTen.EntityFramework.csproj" />
+  </ItemGroup>
+
 </Project>
