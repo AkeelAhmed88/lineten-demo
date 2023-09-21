@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineTen", "LineTen\LineTen.csproj", "{EC5D98B4-134C-4BFA-82FB-0D1367E63A9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LineTen.Api", "src\LineTen.Api\LineTen.Api.csproj", "{EC5D98B4-134C-4BFA-82FB-0D1367E63A9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineTen.Infrastructure", "LineTen.Infrastructure\LineTen.Infrastructure.csproj", "{6CC0EDDA-012C-4667-9AF7-D79F5513A738}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LineTen.EntityFramework", "src\LineTen.EntityFramework\LineTen.EntityFramework.csproj", "{6CC0EDDA-012C-4667-9AF7-D79F5513A738}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineTen.Test", "LineTen.Test\LineTen.Test.csproj", "{FA2CF852-0350-476C-80E8-7FD414DCFD93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LineTen.Test", "test\LineTen.Test\LineTen.Test.csproj", "{FA2CF852-0350-476C-80E8-7FD414DCFD93}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LineTen.Domain", "src\LineTen.Domain\LineTen.Domain.csproj", "{0E428E89-BC07-412A-87C9-9DC7F5F31CDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineTen.Infrastructure", "src\LineTen.Infrastructure\LineTen.Infrastructure.csproj", "{A982873B-813A-4B82-BAC3-5EB1AA8C71A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{FA2CF852-0350-476C-80E8-7FD414DCFD93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA2CF852-0350-476C-80E8-7FD414DCFD93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA2CF852-0350-476C-80E8-7FD414DCFD93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E428E89-BC07-412A-87C9-9DC7F5F31CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E428E89-BC07-412A-87C9-9DC7F5F31CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E428E89-BC07-412A-87C9-9DC7F5F31CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E428E89-BC07-412A-87C9-9DC7F5F31CDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A982873B-813A-4B82-BAC3-5EB1AA8C71A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A982873B-813A-4B82-BAC3-5EB1AA8C71A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A982873B-813A-4B82-BAC3-5EB1AA8C71A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A982873B-813A-4B82-BAC3-5EB1AA8C71A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
