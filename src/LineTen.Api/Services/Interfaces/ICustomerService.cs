@@ -7,6 +7,8 @@ namespace LineTen.Api.Services.Interfaces
     {
         Task CreateCustomerAsync(CustomerRequest request);
 
+        Task<IEnumerable<CustomerResponse>> GetAllCustomersAsync();
+
         Task<CustomerResponse> GetCustomerById(int id);
 
         Task UpdateCustomerById(int id, CustomerRequest request);

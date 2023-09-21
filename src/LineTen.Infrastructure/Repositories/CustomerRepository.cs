@@ -22,6 +22,11 @@ namespace LineTen.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
+        public Task<IEnumerable<Customer>> GetAllCustomersAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<Customer> GetCustomerByIdAsync(int id)
         {
             throw new NotImplementedException();

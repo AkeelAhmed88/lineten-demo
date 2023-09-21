@@ -24,6 +24,11 @@ namespace LineTen.Api.Services.Implementation
             throw new NotImplementedException();
         }
 
+        public Task<IEnumerable<OrderResponse>> GetAllOrdersAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<OrderResponse> GetOrderById(int id)
         {
             throw new NotImplementedException();

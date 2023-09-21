@@ -2,14 +2,8 @@
 
 namespace LineTen.Api.Requests
 {
-    public class OrderUpdateRequest
+    public class OrderUpdateRequest : BaseOrderRequest
     {
-        [Required]
-        public int ProductId { get; set; }
-
-        [Required]
-        public int CustomerId { get; set; }
-
         [Required]
         public string Status { get; set; } = "Created";
     }

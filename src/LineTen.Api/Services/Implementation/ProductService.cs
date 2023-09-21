@@ -24,6 +24,11 @@ namespace LineTen.Api.Services.Implementation
             throw new NotImplementedException();
         }
 
+        public Task<IEnumerable<ProductResponse>> GetAllProductsAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<ProductResponse> GetProductById(int id)
         {
             throw new NotImplementedException();

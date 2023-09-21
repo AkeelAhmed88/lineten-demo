@@ -6,6 +6,8 @@ namespace LineTen.Domain.Repositories
     {
         Task CreateOrderAsync(Order order);
 
+        Task<IEnumerable<Order>> GetAllOrdersAsync();
+
         Task<Order> GetOrderByIdAsync(int id);
 
         Task UpdateOrderAsync(Order order);

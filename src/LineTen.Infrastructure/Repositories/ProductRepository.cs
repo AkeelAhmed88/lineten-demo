@@ -22,6 +22,11 @@ namespace LineTen.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
+        public Task<IEnumerable<Product>> GetAllProductsAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<Product> GetProductByIdAsync(int id)
         {
             throw new NotImplementedException();

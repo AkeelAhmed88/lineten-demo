@@ -3,15 +3,11 @@ using LineTen.Api.Services.Interfaces;
 using LineTen.Domain.Repositories;
 using LineTen.Infrastructure;
 using LineTen.Infrastructure.Repositories;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<LineTenContext>(options =>
-{
-    options.UseSqlServer("");
-});
+builder.Services.AddDbContext<LineTenContext>();
 
 builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();
 builder.Services.AddTransient<IOrderRepository, OrderRepository>();
