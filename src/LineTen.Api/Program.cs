@@ -1,3 +1,5 @@
+using LineTen.Api.Services.Implementation;
+using LineTen.Api.Services.Interfaces;
 using LineTen.Domain.Repositories;
 using LineTen.Infrastructure;
 using LineTen.Infrastructure.Repositories;
@@ -14,6 +16,9 @@ builder.Services.AddDbContext<LineTenContext>(options =>
 builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();
 builder.Services.AddTransient<IOrderRepository, OrderRepository>();
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
+builder.Services.AddTransient<ICustomerService, CustomerService>();
+builder.Services.AddTransient<IOrderService, OrderService>();
+builder.Services.AddTransient<IProductService, ProductService>();
 
 builder.Services.AddControllers();
 
