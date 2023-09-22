@@ -19,8 +19,4 @@
     <ProjectReference Include="..\LineTen.Infrastructure\LineTen.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Extensions\" />
-  </ItemGroup>
-
 </Project>

@@ -25,10 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="InfrastructureTests\RepositoriesTests\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\src\LineTen.Api\LineTen.Api.csproj" />
     <ProjectReference Include="..\..\src\LineTen.Infrastructure\LineTen.Infrastructure.csproj" />
   </ItemGroup>

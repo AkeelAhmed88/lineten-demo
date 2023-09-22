@@ -1,7 +1,6 @@
 ﻿using LineTen.Api.Requests;
 using LineTen.Api.Responses;
 using LineTen.Api.Services.Interfaces;
-using LineTen.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -21,35 +20,37 @@ namespace LineTen.Api.Controllers
 
         // GET: api/<CustomerController>
         [HttpGet]
-        public IEnumerable<CustomerResponse> Get()
+        public async Task<IEnumerable<CustomerResponse>> Get()
         {
-            throw new NotImplementedException();
+            return await _service.GetAllCustomersAsync();
         }
 
         // GET api/<CustomerController>/5
         [HttpGet("{id}")]
-        public CustomerResponse Get(int id)
+        public async Task<CustomerResponse> Get(int id)
         {
-            throw new NotImplementedException();
+            return await _service.GetCustomerByIdAsync(id);
         }
 
         // POST api/<CustomerController>
         [HttpPost]
-        public int Post([FromBody] CustomerRequest request)
+        public async Task<CustomerResponse> Post([FromBody] CustomerRequest request)
         {
-            throw new NotImplementedException();
+            return await _service.CreateCustomerAsync(request);
         }
 
         // PUT api/<CustomerController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] CustomerRepository request)
+        public async Task<CustomerResponse> Put(int id, [FromBody] CustomerRequest request)
         {
+            return await _service.UpdateCustomerByIdAsync(id, request);
         }
 
         // DELETE api/<CustomerController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<bool> Delete(int id)
         {
+            return await _service.DeleteCustomerByIdAsync(id);
         }
     }
 }
