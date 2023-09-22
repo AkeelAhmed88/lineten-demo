@@ -12,12 +12,12 @@ namespace LineTen.Infrastructure.Repositories
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public Task CreateOrderAsync(Order order)
+        public Task<Order> CreateOrderAsync(Order order)
         {
             throw new NotImplementedException();
         }
 
-        public Task DeleteOrderByIdAsync(int id)
+        public Task<bool> DeleteOrderByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
@@ -32,7 +32,7 @@ namespace LineTen.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public Task UpdateOrderAsync(Order order)
+        public Task<Order> UpdateOrderAsync(Order order)
         {
             throw new NotImplementedException();
         }

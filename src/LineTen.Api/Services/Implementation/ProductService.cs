@@ -14,12 +14,12 @@ namespace LineTen.Api.Services.Implementation
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
-        public Task CreateProductAsync(ProductRequest request)
+        public Task<ProductResponse> CreateProductAsync(ProductRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public Task DeleteProductById(int id)
+        public Task<bool> DeleteProductByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
@@ -29,12 +29,12 @@ namespace LineTen.Api.Services.Implementation
             throw new NotImplementedException();
         }
 
-        public Task<ProductResponse> GetProductById(int id)
+        public Task<ProductResponse> GetProductByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task UpdateProductById(int id, ProductRequest request)
+        public Task<ProductResponse> UpdateProductByIdAsync(int id, ProductRequest request)
         {
             throw new NotImplementedException();
         }

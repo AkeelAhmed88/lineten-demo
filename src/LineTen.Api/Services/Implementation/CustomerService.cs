@@ -14,13 +14,9 @@ namespace LineTen.Api.Services.Implementation
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
-        public Task CreateCustomerAsync(CustomerRequest request)
+        public Task<CustomerResponse> CreateCustomerAsync(CustomerRequest request)
         {
-            throw new NotImplementedException();
-        }
 
-        public Task DeleteCustomerById(int id)
-        {
             throw new NotImplementedException();
         }
 
@@ -29,12 +25,17 @@ namespace LineTen.Api.Services.Implementation
             throw new NotImplementedException();
         }
 
-        public Task<CustomerResponse> GetCustomerById(int id)
+        public Task<CustomerResponse> GetCustomerByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task UpdateCustomerById(int id, CustomerRequest request)
+        public Task<CustomerResponse> UpdateCustomerByIdAsync(int id, CustomerRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<bool> ICustomerService.DeleteCustomerByIdAsync(int id)
         {
             throw new NotImplementedException();
         }

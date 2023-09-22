@@ -5,14 +5,14 @@ namespace LineTen.Api.Services.Interfaces
 {
     public interface IProductService
     {
-        Task CreateProductAsync(ProductRequest request);
+        Task<ProductResponse> CreateProductAsync(ProductRequest request);
 
         Task<IEnumerable<ProductResponse>> GetAllProductsAsync();
 
-        Task<ProductResponse> GetProductById(int id);
+        Task<ProductResponse> GetProductByIdAsync(int id);
 
-        Task UpdateProductById(int id, ProductRequest request);
+        Task<ProductResponse> UpdateProductByIdAsync(int id, ProductRequest request);
 
-        Task DeleteProductById(int id);
+        Task<bool> DeleteProductByIdAsync(int id);
     }
 }

@@ -5,14 +5,14 @@ namespace LineTen.Api.Services.Interfaces
 {
     public interface ICustomerService
     {
-        Task CreateCustomerAsync(CustomerRequest request);
+        Task<CustomerResponse> CreateCustomerAsync(CustomerRequest request);
 
         Task<IEnumerable<CustomerResponse>> GetAllCustomersAsync();
 
-        Task<CustomerResponse> GetCustomerById(int id);
+        Task<CustomerResponse> GetCustomerByIdAsync(int id);
 
-        Task UpdateCustomerById(int id, CustomerRequest request);
+        Task<CustomerResponse> UpdateCustomerByIdAsync(int id, CustomerRequest request);
 
-        Task DeleteCustomerById(int id);
+        Task<bool> DeleteCustomerByIdAsync(int id);
     }
 }
