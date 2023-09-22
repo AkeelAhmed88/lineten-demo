@@ -1,5 +1,6 @@
 ﻿using LineTen.Domain.Entities;
 using LineTen.Domain.Repositories;
+using System.Data.Entity;
 
 namespace LineTen.Infrastructure.Repositories
 {
@@ -12,29 +13,59 @@ namespace LineTen.Infrastructure.Repositories
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public Task<Product> CreateProductAsync(Product product)
+        public async Task<Product> CreateProductAsync(Product product)
         {
-            throw new NotImplementedException();
+            await _context.AddAsync(product);
+
+            await _context.SaveChangesAsync();
+
+            return product;
         }
 
-        public Task<bool> DeleteProductByIdAsync(int id)
+        public async Task<bool> DeleteProductByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var productToDelete = await _context.FindAsync<Product>(id);
+
+            if (productToDelete != null)
+            {
+                _context.Remove(productToDelete);
+
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+
+            return false;
         }
 
-        public Task<IEnumerable<Product>> GetAllProductsAsync()
+        public async Task<IEnumerable<Product>> GetAllProductsAsync()
         {
-            throw new NotImplementedException();
+            return await _context.Products.ToListAsync();
         }
 
-        public Task<Product> GetProductByIdAsync(int id)
+        public async Task<Product> GetProductByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var product = await _context.FindAsync<Product>(id);
+
+            return product ?? new Product();
         }
 
-        public Task<Product> UpdateProductAsync(int id, Product product)
+        public async Task<Product> UpdateProductAsync(int id, Product product)
         {
-            throw new NotImplementedException();
+            var existingProductRecord = await _context.FindAsync<Product>(id);
+
+            if (existingProductRecord != null)
+            {
+                existingProductRecord.Name = product.Name;
+                existingProductRecord.Description = product.Description;
+                existingProductRecord.Sku = product.Sku;
+
+                await _context.SaveChangesAsync();
+
+                return existingProductRecord;
+            }
+
+            return new Product();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using LineTen.Domain.Entities;
 using LineTen.Domain.Repositories;
+using System.Data.Entity;
 
 namespace LineTen.Infrastructure.Repositories
 {
@@ -12,29 +13,59 @@ namespace LineTen.Infrastructure.Repositories
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public Task<Order> CreateOrderAsync(Order order)
+        public async Task<Order> CreateOrderAsync(Order order)
         {
-            throw new NotImplementedException();
+            await _context.AddAsync(order);
+
+            await _context.SaveChangesAsync();
+
+            return order;
         }
 
-        public Task<bool> DeleteOrderByIdAsync(int id)
+        public async Task<bool> DeleteOrderByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var orderToDelete = await _context.FindAsync<Order>(id);
+
+            if (orderToDelete != null)
+            {
+                _context.Remove(orderToDelete);
+
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+
+            return false;
         }
 
-        public Task<IEnumerable<Order>> GetAllOrdersAsync()
+        public async Task<IEnumerable<Order>> GetAllOrdersAsync()
         {
-            throw new NotImplementedException();
+            return await _context.Orders.ToListAsync();
         }
 
-        public Task<Order> GetOrderByIdAsync(int id)
+        public async Task<Order> GetOrderByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var order = await _context.FindAsync<Order>(id);
+
+            return order ?? new Order();
         }
 
-        public Task<Order> UpdateOrderAsync(int id, Order order)
+        public async Task<Order> UpdateOrderAsync(int id, Order order)
         {
-            throw new NotImplementedException();
+            var existingOrderRecord = await _context.FindAsync<Order>(id);
+
+            if (existingOrderRecord != null)
+            {
+                existingOrderRecord.ProductId = order.ProductId;
+                existingOrderRecord.CustomerId = order.CustomerId;
+                existingOrderRecord.Status = order.Status;
+
+                await _context.SaveChangesAsync();
+
+                return existingOrderRecord;
+            }
+
+            return new Order();
         }
     }
 }

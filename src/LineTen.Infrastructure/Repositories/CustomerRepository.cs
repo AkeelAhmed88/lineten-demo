@@ -1,5 +1,6 @@
 ﻿using LineTen.Domain.Entities;
 using LineTen.Domain.Repositories;
+using System.Data.Entity;
 
 namespace LineTen.Infrastructure.Repositories
 {
@@ -12,29 +13,60 @@ namespace LineTen.Infrastructure.Repositories
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public Task<Customer> CreateCustomerAsync(Customer customer)
+        public async Task<Customer> CreateCustomerAsync(Customer customer)
         {
-            throw new NotImplementedException();
+            await _context.AddAsync(customer);
+
+            await _context.SaveChangesAsync();
+
+            return customer;
         }
 
-        public Task<bool> DeleteCustomerByIdAsync(int id)
+        public async Task<bool> DeleteCustomerByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var customerToDelete = await _context.FindAsync<Customer>(id);
+            
+            if (customerToDelete != null)
+            {
+                _context.Remove(customerToDelete);
+
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+
+            return false;
         }
 
-        public Task<IEnumerable<Customer>> GetAllCustomersAsync()
+        public async Task<IEnumerable<Customer>> GetAllCustomersAsync()
         {
-            throw new NotImplementedException();
+            return await _context.Customers.ToListAsync();
         }
          
-        public Task<Customer> GetCustomerByIdAsync(int id)
+        public async Task<Customer> GetCustomerByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var customer = await _context.FindAsync<Customer>(id);
+
+            return customer ?? new Customer();
         }
 
-        public Task<Customer> UpdateCustomerAsync(int id, Customer customer)
+        public async Task<Customer> UpdateCustomerAsync(int id, Customer customer)
         {
-            throw new NotImplementedException();
+            var existingCustomerRecord = await _context.FindAsync<Customer>(id);
+
+            if (existingCustomerRecord != null)
+            {
+                existingCustomerRecord.FirstName = customer.FirstName;
+                existingCustomerRecord.LastName = customer.LastName;
+                existingCustomerRecord.Phone = customer.Phone;
+                existingCustomerRecord.Email = customer.Email;
+
+                await _context.SaveChangesAsync();
+
+                return existingCustomerRecord;
+            }
+
+            return new Customer();
         }
     }
 }
