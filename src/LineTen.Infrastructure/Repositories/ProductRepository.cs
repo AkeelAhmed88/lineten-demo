@@ -32,7 +32,7 @@ namespace LineTen.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<Product> UpdateProductAsync(Product product)
+        public Task<Product> UpdateProductAsync(int id, Product product)
         {
             throw new NotImplementedException();
         }

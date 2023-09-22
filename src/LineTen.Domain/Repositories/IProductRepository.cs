@@ -10,7 +10,7 @@ namespace LineTen.Domain.Repositories
 
         Task<Product> GetProductByIdAsync(int id);
 
-        Task<Product> UpdateProductAsync(Product product);
+        Task<Product> UpdateProductAsync(int id, Product product);
 
         Task<bool> DeleteProductByIdAsync(int id);
     }
