@@ -1,53 +1,36 @@
 ﻿using LineTen.Domain.Entities;
 using LineTen.Domain.Repositories;
-using System.Data.Entity;
 
 namespace LineTen.Infrastructure.Repositories
 {
-    public class ProductRepository : IProductRepository
+    public class ProductRepository : BaseRepository, IProductRepository
     {
         private readonly LineTenContext _context;
 
         public ProductRepository(LineTenContext context)
+            : base(context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
         public async Task<Product> CreateProductAsync(Product product)
         {
-            await _context.AddAsync(product);
-
-            await _context.SaveChangesAsync();
-
-            return product;
+            return await CreateAsync(product);
         }
 
         public async Task<bool> DeleteProductByIdAsync(int id)
         {
-            var productToDelete = await _context.FindAsync<Product>(id);
-
-            if (productToDelete != null)
-            {
-                _context.Remove(productToDelete);
-
-                await _context.SaveChangesAsync();
-
-                return true;
-            }
-
-            return false;
+            return await DeleteByIdAsync<Product>(id);
         }
 
         public async Task<IEnumerable<Product>> GetAllProductsAsync()
         {
-            return await _context.Products.ToListAsync();
+            return await GetAllEntitiesAsync<Product>();
         }
 
         public async Task<Product> GetProductByIdAsync(int id)
         {
-            var product = await _context.FindAsync<Product>(id);
-
-            return product ?? new Product();
+            return await GetByIdAsync<Product>(id);
         }
 
         public async Task<Product> UpdateProductAsync(int id, Product product)

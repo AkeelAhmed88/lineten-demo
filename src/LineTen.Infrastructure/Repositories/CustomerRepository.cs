@@ -4,50 +4,34 @@ using System.Data.Entity;
 
 namespace LineTen.Infrastructure.Repositories
 {
-    public class CustomerRepository : ICustomerRepository
+    public class CustomerRepository : BaseRepository, ICustomerRepository
     {
         private readonly LineTenContext _context;
 
         public CustomerRepository(LineTenContext context)
+            : base(context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
         public async Task<Customer> CreateCustomerAsync(Customer customer)
         {
-            await _context.AddAsync(customer);
-
-            await _context.SaveChangesAsync();
-
-            return customer;
+            return await CreateAsync(customer);
         }
 
         public async Task<bool> DeleteCustomerByIdAsync(int id)
         {
-            var customerToDelete = await _context.FindAsync<Customer>(id);
-            
-            if (customerToDelete != null)
-            {
-                _context.Remove(customerToDelete);
-
-                await _context.SaveChangesAsync();
-
-                return true;
-            }
-
-            return false;
+            return await DeleteByIdAsync<Customer>(id);
         }
 
         public async Task<IEnumerable<Customer>> GetAllCustomersAsync()
         {
-            return await _context.Customers.ToListAsync();
+            return await GetAllEntitiesAsync<Customer>();
         }
          
         public async Task<Customer> GetCustomerByIdAsync(int id)
         {
-            var customer = await _context.FindAsync<Customer>(id);
-
-            return customer ?? new Customer();
+            return await GetByIdAsync<Customer>(id);
         }
 
         public async Task<Customer> UpdateCustomerAsync(int id, Customer customer)
