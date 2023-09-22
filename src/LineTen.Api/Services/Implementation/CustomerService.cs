@@ -19,56 +19,28 @@ namespace LineTen.Api.Services.Implementation
         {
             var result = await _repository.CreateCustomerAsync(request.ToCustomer());
 
-            return new CustomerResponse
-            {
-                Id = result.Id,
-                FirstName = result.FirstName,
-                LastName = result.LastName,
-                Phone = result.Phone,
-                Email = result.Email,
-            };
+            return result.ToCustomerResponse();
         }
 
         public async Task<IEnumerable<CustomerResponse>> GetAllCustomersAsync()
         {
             var result = await _repository.GetAllCustomersAsync();
 
-            return result.Select(c => new CustomerResponse
-            {
-                Id = c.Id,
-                FirstName = c.FirstName,
-                LastName = c.LastName,
-                Phone = c.Phone,
-                Email = c.Email,
-            });
+            return result.ToCustomerResponse();
         }
 
         public async Task<CustomerResponse> GetCustomerByIdAsync(int id)
         {
             var result = await _repository.GetCustomerByIdAsync(id);
 
-            return new CustomerResponse
-            {
-                Id = result.Id,
-                FirstName = result.FirstName,
-                LastName = result.LastName,
-                Phone = result.Phone,
-                Email = result.Email,
-            };
+            return result.ToCustomerResponse();
         }
 
         public async Task<CustomerResponse> UpdateCustomerByIdAsync(int id, CustomerRequest request)
         {
             var result = await _repository.UpdateCustomerAsync(id, request.ToCustomer());
 
-            return new CustomerResponse
-            {
-                Id = result.Id,
-                FirstName = result.FirstName,
-                LastName = result.LastName,
-                Phone = result.Phone,
-                Email = result.Email,
-            };
+            return result.ToCustomerResponse();
         }
 
         public async Task<bool> DeleteCustomerByIdAsync(int id)

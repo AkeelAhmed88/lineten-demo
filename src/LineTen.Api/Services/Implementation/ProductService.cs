@@ -19,13 +19,7 @@ namespace LineTen.Api.Services.Implementation
         {
             var result = await _repository.CreateProductAsync(request.ToProduct());
 
-            return new ProductResponse
-            {
-                Id = result.Id,
-                Name = result.Name,
-                Description = result.Description,
-                Sku = result.Sku,
-            };
+            return result.ToProductResponse();
         }
 
         public async Task<bool> DeleteProductByIdAsync(int id)
@@ -37,39 +31,21 @@ namespace LineTen.Api.Services.Implementation
         {
             var result = await _repository.GetAllProductsAsync();
 
-            return result.Select(p => new ProductResponse
-            {
-                Id = p.Id,
-                Name = p.Name,
-                Description = p.Description,
-                Sku = p.Sku,
-            });
+            return result.ToProductResponse();
         }
 
         public async Task<ProductResponse> GetProductByIdAsync(int id)
         {
             var result = await _repository.GetProductByIdAsync(id);
 
-            return new ProductResponse
-            {
-                Id = result.Id,
-                Name = result.Name,
-                Description = result.Description,
-                Sku = result.Sku,
-            };
+            return result.ToProductResponse();
         }
 
         public async Task<ProductResponse> UpdateProductByIdAsync(int id, ProductRequest request)
         {
             var result = await _repository.UpdateProductAsync(id, request.ToProduct());
 
-            return new ProductResponse
-            {
-                Id = result.Id,
-                Name = result.Name,
-                Description = result.Description,
-                Sku = result.Sku,
-            };
+            return result.ToProductResponse();
         }
     }
 }
