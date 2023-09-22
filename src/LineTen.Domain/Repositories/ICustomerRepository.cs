@@ -10,7 +10,7 @@ namespace LineTen.Domain.Repositories
         
         Task<Customer> GetCustomerByIdAsync(int id);
 
-        Task<Customer> UpdateCustomerAsync(Customer customer);
+        Task<Customer> UpdateCustomerAsync(int id, Customer customer);
 
         Task<bool> DeleteCustomerByIdAsync(int id);
     }

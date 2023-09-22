@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nDefj+ON63Uf1ecChZwEQ+kh45eQCvgaHz5xl+vmlfjwm8YQhQwF23BFvMNQOiGm+nIRtnD0FnR2oi8xbZniCg==",
+  "dgSpecHash": "CxXf8u6wn+rCh/YOcMpQUewxILbl7EUlPj25f8hB7eRJIhqHTPCYFnHiUhGbh9iZsxa8m3OavqShPn/i4sjX+g==",
   "success": true,
   "projectFilePath": "C:\\Users\\akeel\\source\\repos\\lineten-demo\\test\\LineTen.Test\\LineTen.Test.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\akeel\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\akeel\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\akeel\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\akeel\\.nuget\\packages\\fluentassertions\\6.12.0\\fluentassertions.6.12.0.nupkg.sha512",
     "C:\\Users\\akeel\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.11\\microsoft.aspnetcore.openapi.7.0.11.nupkg.sha512",
     "C:\\Users\\akeel\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\akeel\\.nuget\\packages\\microsoft.codecoverage\\17.7.2\\microsoft.codecoverage.17.7.2.nupkg.sha512",

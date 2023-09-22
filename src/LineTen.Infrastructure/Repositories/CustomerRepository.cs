@@ -26,13 +26,13 @@ namespace LineTen.Infrastructure.Repositories
         {
             throw new NotImplementedException();
         }
-
+         
         public Task<Customer> GetCustomerByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Customer> UpdateCustomerAsync(Customer customer)
+        public Task<Customer> UpdateCustomerAsync(int id, Customer customer)
         {
             throw new NotImplementedException();
         }
