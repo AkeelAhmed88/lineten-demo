@@ -4,7 +4,7 @@
     {
         public int Id { get; set; }
 
-        public ProductResponse ProductId { get; set; } = new ProductResponse();
+        public ProductResponse Product { get; set; } = new ProductResponse();
 
         public CustomerResponse Customer { get; set; } = new CustomerResponse();
 

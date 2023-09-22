@@ -10,7 +10,7 @@ namespace LineTen.Domain.Repositories
 
         Task<Order> GetOrderByIdAsync(int id);
 
-        Task<Order> UpdateOrderAsync(Order order);
+        Task<Order> UpdateOrderAsync(int id, Order order);
 
         Task<bool> DeleteOrderByIdAsync(int id);
     }

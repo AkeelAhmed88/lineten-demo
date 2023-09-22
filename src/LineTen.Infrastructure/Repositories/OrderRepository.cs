@@ -32,7 +32,7 @@ namespace LineTen.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<Order> UpdateOrderAsync(Order order)
+        public Task<Order> UpdateOrderAsync(int id, Order order)
         {
             throw new NotImplementedException();
         }
