@@ -1,4 +1,5 @@
-﻿using LineTen.Api.Requests;
+﻿using LineTen.Api.Extensions;
+using LineTen.Api.Requests;
 using LineTen.Api.Responses;
 using LineTen.Api.Services.Interfaces;
 using LineTen.Domain.Repositories;
@@ -14,29 +15,61 @@ namespace LineTen.Api.Services.Implementation
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
-        public Task<ProductResponse> CreateProductAsync(ProductRequest request)
+        public async Task<ProductResponse> CreateProductAsync(ProductRequest request)
         {
-            throw new NotImplementedException();
+            var result = await _repository.CreateProductAsync(request.ToProduct());
+
+            return new ProductResponse
+            {
+                Id = result.Id,
+                Name = result.Name,
+                Description = result.Description,
+                Sku = result.Sku,
+            };
         }
 
-        public Task<bool> DeleteProductByIdAsync(int id)
+        public async Task<bool> DeleteProductByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _repository.DeleteProductByIdAsync(id);
         }
 
-        public Task<IEnumerable<ProductResponse>> GetAllProductsAsync()
+        public async Task<IEnumerable<ProductResponse>> GetAllProductsAsync()
         {
-            throw new NotImplementedException();
+            var result = await _repository.GetAllProductsAsync();
+
+            return result.Select(p => new ProductResponse
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Description = p.Description,
+                Sku = p.Sku,
+            });
         }
 
-        public Task<ProductResponse> GetProductByIdAsync(int id)
+        public async Task<ProductResponse> GetProductByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var result = await _repository.GetProductByIdAsync(id);
+
+            return new ProductResponse
+            {
+                Id = result.Id,
+                Name = result.Name,
+                Description = result.Description,
+                Sku = result.Sku,
+            };
         }
 
-        public Task<ProductResponse> UpdateProductByIdAsync(int id, ProductRequest request)
+        public async Task<ProductResponse> UpdateProductByIdAsync(int id, ProductRequest request)
         {
-            throw new NotImplementedException();
+            var result = await _repository.UpdateProductAsync(id, request.ToProduct());
+
+            return new ProductResponse
+            {
+                Id = result.Id,
+                Name = result.Name,
+                Description = result.Description,
+                Sku = result.Sku,
+            };
         }
     }
 }

@@ -20,35 +20,37 @@ namespace LineTen.Api.Controllers
 
         // GET: api/<ProductController>
         [HttpGet]
-        public IEnumerable<ProductResponse> Get()
+        public async Task<IEnumerable<ProductResponse>> Get()
         {
-            throw new NotImplementedException();
+            return await _service.GetAllProductsAsync();
         }
 
         // GET api/<ProductController>/5
         [HttpGet("{id}")]
-        public ProductResponse Get(int id)
+        public async Task<ProductResponse> Get(int id)
         {
-            throw new NotImplementedException();
+            return await _service.GetProductByIdAsync(id);
         }
 
         // POST api/<ProductController>
         [HttpPost]
-        public int Post([FromBody] ProductRequest request)
+        public async Task<ProductResponse> Post([FromBody] ProductRequest request)
         {
-            throw new NotImplementedException();
+            return await _service.CreateProductAsync(request);
         }
 
         // PUT api/<ProductController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] ProductRequest request)
+        public async Task<ProductResponse> Put(int id, [FromBody] ProductRequest request)
         {
+            return await _service.UpdateProductByIdAsync(id, request);
         }
 
         // DELETE api/<ProductController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<bool> Delete(int id)
         {
+            return await _service.DeleteProductByIdAsync(id);
         }
     }
 }
