@@ -103,12 +103,17 @@ namespace LineTen.Test.ApiTests.ServicesTests
                 Product = new ProductResponse
                 {
                     Id = 1,
-                    Name = "test"
+                    Name = "test",
+                    Description = "test",
+                    Sku = "test"
                 },
                 Customer = new CustomerResponse
                 {
                     Id = 1,
                     FirstName = "test",
+                    LastName = "test",
+                    Phone = "07887887878",
+                    Email = "test@test.com"
                 },
                 Status = "Cancelled",
                 CreatedDate = CreatedDatetime,
@@ -119,7 +124,22 @@ namespace LineTen.Test.ApiTests.ServicesTests
             {
                 Id = 1,
                 ProductId = 1,
+                Product = new Product
+                {
+                    Id = 1,
+                    Name = "test",
+                    Description = "test",
+                    Sku = "test"
+                },
                 CustomerId = 1,
+                Customer = new Customer
+                {
+                    Id = 1,
+                    FirstName = "test",
+                    LastName = "test",
+                    Phone = "07887887878",
+                    Email = "test@test.com"
+                },
                 Status = "Cancelled",
                 CreatedDate = CreatedDatetime,
                 UpdatedDate = UpdatedDatetime
@@ -160,14 +180,19 @@ namespace LineTen.Test.ApiTests.ServicesTests
             Product = new ProductResponse
             {
                 Id = 1,
-                Name = "test"
+                Name = "test",
+                Description = "test",
+                Sku = "test"
             },
             Customer = new CustomerResponse
             {
                 Id = 1,
                 FirstName = "test",
+                LastName = "test",
+                Phone = "07887887878",
+                Email = "test@test.com"
             },
-            Status = "Placed",
+            Status = "Created",
             CreatedDate = CreatedDatetime
         };
 
@@ -175,8 +200,23 @@ namespace LineTen.Test.ApiTests.ServicesTests
         {
             Id = 1,
             ProductId = 1,
+            Product = new Product
+            {
+                Id = 1,
+                Name = "test",
+                Description = "test",
+                Sku = "test"
+            },
             CustomerId = 1,
-            Status = "Placed",
+            Customer = new Customer
+            {
+                Id = 1,
+                FirstName = "test",
+                LastName = "test",
+                Phone = "07887887878",
+                Email = "test@test.com"
+            },
+            Status = "Created",
             CreatedDate = CreatedDatetime
         };
     }

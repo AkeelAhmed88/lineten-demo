@@ -20,35 +20,47 @@ namespace LineTen.Api.Controllers
 
         // GET: api/<OrderController>
         [HttpGet]
-        public IEnumerable<OrderResponse> Get()
+        public async Task<ActionResult<IEnumerable<OrderResponse>>> Get()
         {
-            throw new NotImplementedException();
+            var result = await _service.GetAllOrdersAsync();
+
+            return result != null ? Ok(result) : BadRequest();
         }
 
         // GET api/<OrderController>/5
         [HttpGet("{id}")]
-        public OrderResponse Get(int id)
+        public async Task<ActionResult<OrderResponse>> Get(int id)
         {
-            throw new NotImplementedException();
+            var result = await _service.GetOrderByIdAsync(id);
+
+            return result != null ? Ok(result) : BadRequest();
         }
 
         // POST api/<OrderController>
         [HttpPost]
-        public int Post([FromBody] OrderCreateRequest request)
+        public async Task<ActionResult<OrderResponse>> Post([FromBody] OrderCreateRequest request)
         {
-            throw new NotImplementedException();
+            var result = await _service.CreateOrderAsync(request);
+
+            return result != null ? Created(string.Empty, result) : BadRequest();
         }
 
         // PUT api/<OrderController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] OrderUpdateRequest request)
+        public async Task<ActionResult<OrderResponse>> Put(int id, [FromBody] OrderUpdateRequest request)
         {
+            var result = await _service.UpdateOrderByIdAsync(id, request);
+
+            return result != null ? Ok(result) : NotFound();
         }
 
         // DELETE api/<OrderController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
+            var result = await _service.DeleteOrderByIdAsync(id);
+
+            return result == true ? NoContent() : BadRequest();
         }
     }
 }

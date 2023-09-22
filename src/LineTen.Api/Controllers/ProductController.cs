@@ -20,37 +20,47 @@ namespace LineTen.Api.Controllers
 
         // GET: api/<ProductController>
         [HttpGet]
-        public async Task<IEnumerable<ProductResponse>> Get()
+        public async Task<ActionResult<IEnumerable<ProductResponse>>> Get()
         {
-            return await _service.GetAllProductsAsync();
+            var result = await _service.GetAllProductsAsync();
+
+            return result != null ? Ok(result) : BadRequest();
         }
 
         // GET api/<ProductController>/5
         [HttpGet("{id}")]
-        public async Task<ProductResponse> Get(int id)
+        public async Task<ActionResult<ProductResponse>> Get(int id)
         {
-            return await _service.GetProductByIdAsync(id);
+            var result = await _service.GetProductByIdAsync(id);
+
+            return result != null ? Ok( result) : BadRequest();
         }
 
         // POST api/<ProductController>
         [HttpPost]
-        public async Task<ProductResponse> Post([FromBody] ProductRequest request)
+        public async Task<ActionResult<ProductResponse>> Post([FromBody] ProductRequest request)
         {
-            return await _service.CreateProductAsync(request);
+            var result = await _service.CreateProductAsync(request);
+
+            return result != null ? Created(string.Empty, result) : BadRequest();
         }
 
         // PUT api/<ProductController>/5
         [HttpPut("{id}")]
-        public async Task<ProductResponse> Put(int id, [FromBody] ProductRequest request)
+        public async Task<ActionResult<ProductResponse>> Put(int id, [FromBody] ProductRequest request)
         {
-            return await _service.UpdateProductByIdAsync(id, request);
+            var result = await _service.UpdateProductByIdAsync(id, request);
+
+            return result != null ? Ok(result) : NotFound();
         }
 
         // DELETE api/<ProductController>/5
         [HttpDelete("{id}")]
-        public async Task<bool> Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            return await _service.DeleteProductByIdAsync(id);
+            var result = await _service.DeleteProductByIdAsync(id);
+
+            return result == true ? NoContent() : BadRequest();
         }
     }
 }

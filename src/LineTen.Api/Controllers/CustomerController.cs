@@ -20,37 +20,47 @@ namespace LineTen.Api.Controllers
 
         // GET: api/<CustomerController>
         [HttpGet]
-        public async Task<IEnumerable<CustomerResponse>> Get()
+        public async Task<ActionResult<IEnumerable<CustomerResponse>>> Get()
         {
-            return await _service.GetAllCustomersAsync();
+            var result = await _service.GetAllCustomersAsync();
+
+            return result != null ? Ok(result) : BadRequest();
         }
 
         // GET api/<CustomerController>/5
         [HttpGet("{id}")]
-        public async Task<CustomerResponse> Get(int id)
+        public async Task<ActionResult<CustomerResponse>> Get(int id)
         {
-            return await _service.GetCustomerByIdAsync(id);
+            var result = await _service.GetCustomerByIdAsync(id);
+
+            return result != null ? Ok(result) : BadRequest();
         }
 
         // POST api/<CustomerController>
         [HttpPost]
-        public async Task<CustomerResponse> Post([FromBody] CustomerRequest request)
+        public async Task<ActionResult<CustomerResponse>> Post([FromBody] CustomerRequest request)
         {
-            return await _service.CreateCustomerAsync(request);
+            var result = await _service.CreateCustomerAsync(request);
+
+            return result != null ? Created(string.Empty, result) : BadRequest();
         }
 
         // PUT api/<CustomerController>/5
         [HttpPut("{id}")]
-        public async Task<CustomerResponse> Put(int id, [FromBody] CustomerRequest request)
+        public async Task<ActionResult<CustomerResponse>> Put(int id, [FromBody] CustomerRequest request)
         {
-            return await _service.UpdateCustomerByIdAsync(id, request);
+            var result = await _service.UpdateCustomerByIdAsync(id, request);
+
+            return result != null ? Ok(result) : NotFound();
         }
 
         // DELETE api/<CustomerController>/5
         [HttpDelete("{id}")]
-        public async Task<bool> Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            return await _service.DeleteCustomerByIdAsync(id);
+            var result = await _service.DeleteCustomerByIdAsync(id);
+
+            return result == true ? NoContent() : BadRequest();
         }
     }
 }
