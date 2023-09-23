@@ -1,11 +1,17 @@
 using LineTen.Api.Services.Implementation;
 using LineTen.Api.Services.Interfaces;
 using LineTen.Domain.Repositories;
+using LineTen.Infrastructure;
 using LineTen.Infrastructure.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<LineTenContext>(options =>
+{
+    options.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=LineTen;Integrated Security=True;");
+});
 
 builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();
 builder.Services.AddTransient<IOrderRepository, OrderRepository>();

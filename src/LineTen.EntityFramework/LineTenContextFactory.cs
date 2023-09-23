@@ -10,7 +10,7 @@ namespace LineTen.EntityFramework
         {
             var optionsBuilder = new DbContextOptionsBuilder<LineTenContext>();
 
-            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=LineTen;Integrated Security=True;");
+            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=LineTen;Integrated Security=True;");
 
             return new LineTenContext(optionsBuilder.Options);
         }
