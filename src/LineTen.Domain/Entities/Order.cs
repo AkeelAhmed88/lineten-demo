@@ -1,4 +1,7 @@
-﻿namespace LineTen.Domain.Entities
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace LineTen.Domain.Entities
 {
     public class Order
     {
@@ -10,8 +13,10 @@
 
         public string Status { get; set; } = string.Empty;
 
+        [DataType(DataType.DateTime)]
         public DateTime CreatedDate { get; set; }
 
+        [DataType(DataType.DateTime)]
         public DateTime? UpdatedDate { get; set; }
 
         public virtual Product Product { get; set; }
