@@ -41,11 +41,11 @@ namespace LineTen.Infrastructure.Repositories
             return await _context.Set<T>().ToListAsync();
         }
 
-        public async Task<T> GetByIdAsync<T>(int id) where T : class, new()
+        public async Task<T?> GetByIdAsync<T>(int id) where T : class
         {
             var entity = await _context.FindAsync<T>(id);
 
-            return entity ?? new T();
+            return entity ?? null;
         }
     }
 }

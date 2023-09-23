@@ -9,7 +9,7 @@ namespace LineTen.Api.Services.Interfaces
 
         Task<IEnumerable<OrderResponse>> GetAllOrdersAsync();
 
-        Task<OrderResponse> GetOrderByIdAsync(int id);
+        Task<OrderResponse?> GetOrderByIdAsync(int id);
 
         Task<OrderResponse> UpdateOrderByIdAsync(int id, OrderUpdateRequest request);
 

@@ -5,30 +5,32 @@ namespace LineTen.Api.Extensions
 {
     public static class OrderExtensions
     {
-        public static OrderResponse ToOrderResponse(this Order result)
+        public static OrderResponse? ToOrderResponse(this Order? result)
         {
-            return new OrderResponse
-            {
-                Id = result.Id,
-                Product = new ProductResponse
+            return result == null 
+                ? null 
+                : new OrderResponse
                 {
-                    Id = result.Product.Id,
-                    Name = result.Product.Name,
-                    Description = result.Product.Description,
-                    Sku = result.Product.Sku,
-                },
-                Customer = new CustomerResponse
-                {
-                    Id = result.Customer.Id,
-                    FirstName = result.Customer.FirstName,
-                    LastName = result.Customer.LastName,
-                    Phone = result.Customer.Phone,
-                    Email = result.Customer.Email,
-                },
-                Status = result.Status,
-                CreatedDate = result.CreatedDate,
-                UpdatedDate = result.UpdatedDate
-            };
+                    Id = result.Id,
+                    Product = new ProductResponse
+                    {
+                        Id = result.Product.Id,
+                        Name = result.Product.Name,
+                        Description = result.Product.Description,
+                        Sku = result.Product.Sku,
+                    },
+                    Customer = new CustomerResponse
+                    {
+                        Id = result.Customer.Id,
+                        FirstName = result.Customer.FirstName,
+                        LastName = result.Customer.LastName,
+                        Phone = result.Customer.Phone,
+                        Email = result.Customer.Email,
+                    },
+                    Status = result.Status,
+                    CreatedDate = result.CreatedDate,
+                    UpdatedDate = result.UpdatedDate
+                };
         }
 
         public static IEnumerable<OrderResponse> ToOrderResponse(this IEnumerable<Order> result)

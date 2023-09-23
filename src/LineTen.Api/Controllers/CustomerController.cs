@@ -24,7 +24,7 @@ namespace LineTen.Api.Controllers
         {
             var result = await _service.GetAllCustomersAsync();
 
-            return result != null ? Ok(result) : BadRequest();
+            return result.Any() ? Ok(result) : NotFound();
         }
 
         // GET api/<CustomerController>/5
@@ -33,7 +33,7 @@ namespace LineTen.Api.Controllers
         {
             var result = await _service.GetCustomerByIdAsync(id);
 
-            return result != null ? Ok(result) : BadRequest();
+            return result != null ? Ok(result) : NotFound();
         }
 
         // POST api/<CustomerController>

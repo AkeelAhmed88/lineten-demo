@@ -9,7 +9,7 @@ namespace LineTen.Api.Services.Interfaces
 
         Task<IEnumerable<ProductResponse>> GetAllProductsAsync();
 
-        Task<ProductResponse> GetProductByIdAsync(int id);
+        Task<ProductResponse?> GetProductByIdAsync(int id);
 
         Task<ProductResponse> UpdateProductByIdAsync(int id, ProductRequest request);
 

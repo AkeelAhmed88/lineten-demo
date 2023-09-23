@@ -24,7 +24,7 @@ namespace LineTen.Api.Controllers
         {
             var result = await _service.GetAllProductsAsync();
 
-            return result != null ? Ok(result) : BadRequest();
+            return result.Any() ? Ok(result) : NotFound();
         }
 
         // GET api/<ProductController>/5
@@ -33,7 +33,7 @@ namespace LineTen.Api.Controllers
         {
             var result = await _service.GetProductByIdAsync(id);
 
-            return result != null ? Ok( result) : BadRequest();
+            return result != null ? Ok( result) : NotFound();
         }
 
         // POST api/<ProductController>

@@ -34,7 +34,7 @@ namespace LineTen.Api.Services.Implementation
             return result.ToOrderResponse();
         }
 
-        public async Task<OrderResponse> GetOrderByIdAsync(int id)
+        public async Task<OrderResponse?> GetOrderByIdAsync(int id)
         {
             var result = await _repository.GetOrderByIdAsync(id);
 

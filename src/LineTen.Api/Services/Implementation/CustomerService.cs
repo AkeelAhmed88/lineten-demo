@@ -29,7 +29,7 @@ namespace LineTen.Api.Services.Implementation
             return result.ToCustomerResponse();
         }
 
-        public async Task<CustomerResponse> GetCustomerByIdAsync(int id)
+        public async Task<CustomerResponse?> GetCustomerByIdAsync(int id)
         {
             var result = await _repository.GetCustomerByIdAsync(id);
 

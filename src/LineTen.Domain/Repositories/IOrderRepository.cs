@@ -8,7 +8,7 @@ namespace LineTen.Domain.Repositories
 
         Task<IEnumerable<Order>> GetAllOrdersAsync();
 
-        Task<Order> GetOrderByIdAsync(int id);
+        Task<Order?> GetOrderByIdAsync(int id);
 
         Task<Order> UpdateOrderAsync(int id, Order order);
 

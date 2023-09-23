@@ -28,7 +28,7 @@ namespace LineTen.Infrastructure.Repositories
             return await GetAllEntitiesAsync<Product>();
         }
 
-        public async Task<Product> GetProductByIdAsync(int id)
+        public async Task<Product?> GetProductByIdAsync(int id)
         {
             return await GetByIdAsync<Product>(id);
         }

@@ -8,7 +8,7 @@ namespace LineTen.Domain.Repositories
 
         Task<IEnumerable<Product>> GetAllProductsAsync();
 
-        Task<Product> GetProductByIdAsync(int id);
+        Task<Product?> GetProductByIdAsync(int id);
 
         Task<Product> UpdateProductAsync(int id, Product product);
 

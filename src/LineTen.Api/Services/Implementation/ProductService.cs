@@ -34,7 +34,7 @@ namespace LineTen.Api.Services.Implementation
             return result.ToProductResponse();
         }
 
-        public async Task<ProductResponse> GetProductByIdAsync(int id)
+        public async Task<ProductResponse?> GetProductByIdAsync(int id)
         {
             var result = await _repository.GetProductByIdAsync(id);
 

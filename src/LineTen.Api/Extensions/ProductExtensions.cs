@@ -5,15 +5,17 @@ namespace LineTen.Api.Extensions
 {
     public static class ProductExtensions
     {
-        public static ProductResponse ToProductResponse(this Product result)
+        public static ProductResponse? ToProductResponse(this Product? result)
         {
-            return new ProductResponse
-            {
-                Id = result.Id,
-                Name = result.Name,
-                Description = result.Description,
-                Sku = result.Sku,
-            };
+            return result == null 
+                ? null 
+                : new ProductResponse
+                {
+                    Id = result.Id,
+                    Name = result.Name,
+                    Description = result.Description,
+                    Sku = result.Sku,
+                };
         }
 
         public static IEnumerable<ProductResponse> ToProductResponse(this IEnumerable<Product> result)

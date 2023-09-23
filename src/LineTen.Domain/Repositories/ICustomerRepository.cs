@@ -8,7 +8,7 @@ namespace LineTen.Domain.Repositories
 
         Task<IEnumerable<Customer>> GetAllCustomersAsync();
         
-        Task<Customer> GetCustomerByIdAsync(int id);
+        Task<Customer?> GetCustomerByIdAsync(int id);
 
         Task<Customer> UpdateCustomerAsync(int id, Customer customer);
 

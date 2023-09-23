@@ -29,7 +29,7 @@ namespace LineTen.Infrastructure.Repositories
             return await GetAllEntitiesAsync<Order>();
         }
 
-        public async Task<Order> GetOrderByIdAsync(int id)
+        public async Task<Order?> GetOrderByIdAsync(int id)
         {
             return await GetByIdAsync<Order>(id);
         }

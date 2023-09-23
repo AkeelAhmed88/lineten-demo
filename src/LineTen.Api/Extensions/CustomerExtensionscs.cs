@@ -5,16 +5,18 @@ namespace LineTen.Api.Extensions
 {
     public static class CustomerExtensionscs
     {
-        public static CustomerResponse ToCustomerResponse(this Customer result)
+        public static CustomerResponse? ToCustomerResponse(this Customer? result)
         {
-            return new CustomerResponse
-            {
-                Id = result.Id,
-                FirstName = result.FirstName,
-                LastName = result.LastName,
-                Phone = result.Phone,
-                Email = result.Email,
-            };
+            return result == null 
+                ? null 
+                : new CustomerResponse
+                {
+                    Id = result.Id,
+                    FirstName = result.FirstName,
+                    LastName = result.LastName,
+                    Phone = result.Phone,
+                    Email = result.Email,
+                };
         }
 
         public static IEnumerable<CustomerResponse> ToCustomerResponse(this IEnumerable<Customer> result)

@@ -1,6 +1,5 @@
 ﻿using LineTen.Domain.Entities;
 using LineTen.Domain.Repositories;
-using System.Data.Entity;
 
 namespace LineTen.Infrastructure.Repositories
 {
@@ -29,7 +28,7 @@ namespace LineTen.Infrastructure.Repositories
             return await GetAllEntitiesAsync<Customer>();
         }
          
-        public async Task<Customer> GetCustomerByIdAsync(int id)
+        public async Task<Customer?> GetCustomerByIdAsync(int id)
         {
             return await GetByIdAsync<Customer>(id);
         }
