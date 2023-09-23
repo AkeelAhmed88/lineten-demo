@@ -1236,7 +1236,8 @@
         "dependencies": {
           "EntityFramework": "6.4.4",
           "LineTen.Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "7.0.11"
+          "Microsoft.EntityFrameworkCore": "7.0.11",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.11"
         },
         "compile": {
           "bin/placeholder/LineTen.EntityFramework.dll": {}
@@ -3726,7 +3727,6 @@
       "LineTen.Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.11",
       "Microsoft.EntityFrameworkCore >= 7.0.11",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.11",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.19.5",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
@@ -3783,10 +3783,6 @@
             "version": "[7.0.11, )"
           },
           "Microsoft.EntityFrameworkCore": {
-            "target": "Package",
-            "version": "[7.0.11, )"
-          },
-          "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[7.0.11, )"
           },

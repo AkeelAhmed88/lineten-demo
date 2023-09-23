@@ -5,7 +5,8 @@ namespace LineTen.Infrastructure
 {
     public class LineTenContext : DbContext
     {
-        public LineTenContext() : base() 
+        public LineTenContext(DbContextOptions<LineTenContext> options)
+            : base(options) 
         {
         }
 

@@ -18,12 +18,12 @@ namespace LineTen.Infrastructure.Configurations
                 .IsRequired();
 
             builder.HasOne(c => c.Product)
-                .WithOne()
-                .HasForeignKey("ProductId");
+                .WithMany()
+                .HasForeignKey(c => c.ProductId);
 
             builder.HasOne(c => c.Customer)
-                .WithOne()
-                .HasForeignKey("CustomerId");
+                .WithMany()
+                .HasForeignKey(c => c.CustomerId);
 
             builder.HasIndex(c => c.Id);
         }
